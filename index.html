@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap w/ Vite</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed:wght@400;500;600;700&family=Inter:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg top-nav d-none d-lg-block bg-white">
+      <div class="navbar-container">
+        <span></span>
+        <a class="navbar-brand mxs-auto" href="/">
+          <img class="navbar-logo" src="./images/logo.svg" alt="Communicate Logo">
+        </a>
+        <form class="d-flex" role="">
+          <input class="form-control" type="email" placeholder="Subscribe to Magazine" aria-label="" />
+          <button class="btn btn-link" type="submit">
+            <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.3536 4.35355C19.5488 4.15829 19.5488 3.84171 19.3536 3.64645L16.1716 0.464466C15.9763 0.269204 15.6597 0.269204 15.4645 0.464466C15.2692 0.659728 15.2692 0.976311 15.4645 1.17157L18.2929 4L15.4645 6.82843C15.2692 7.02369 15.2692 7.34027 15.4645 7.53553C15.6597 7.7308 15.9763 7.7308 16.1716 7.53553L19.3536 4.35355ZM0 4V4.5H19V4V3.5H0V4Z"
+                fill="#241B1B" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="menu-divider"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bottom-nav bg-white">
+      <div class="navbar-container">
+        <a class="navbar-brand d-block d-lg-none me-auto" href="/">
+          <img class="navbar-logo" src="./images/logo.svg" alt="Communicate Logo">
+        </a>
+
+        <form class="d-none d-lg-flex search" role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-link" type="submit">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="5.61364" cy="5.81871" r="5.02273" stroke="#241B1B" stroke-width="1.18182" />
+              <line x1="9.28502" y1="9.24232" x2="13.4214" y2="13.3787" stroke="#241B1B" stroke-width="1.18182" />
+            </svg>
+          </button>
+        </form>
+        <div class=" d-flex d-lg-none ms-auto align-items-center gap-2">
+          <button class="btn-link mobile-search-btn" type="button">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="5.61364" cy="5.81871" r="5.02273" stroke="#241B1B" stroke-width="1.18182" />
+              <line x1="9.28502" y1="9.24232" x2="13.4214" y2="13.3787" stroke="#241B1B" stroke-width="1.18182" />
+            </svg>
+          </button>
+          <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Latest</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Stories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Showcase</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Media hub</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Awards
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.3438 6.34375C13.6992 6.34375 14 6.64453 14 7C14 7.38281 13.6992 7.65625 13.3438 7.65625H7.65625V13.3438C7.65625 13.7266 7.35547 14 7 14C6.61719 14 6.34375 13.7266 6.34375 13.3438V7.65625H0.65625C0.273438 7.65625 0 7.38281 0 7C0 6.64453 0.273438 6.34375 0.65625 6.34375H6.34375V0.65625C6.34375 0.300781 6.61719 0 7 0C7.35547 0 7.65625 0.300781 7.65625 0.65625V6.34375H13.3438Z"
+                    fill="#241B1B" />
+                </svg>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">All Awards</a></li>
+                <li><a class="dropdown-item" href="#">Corporate Content Awards</a></li>
+                <li><a class="dropdown-item" href="#">Corporate Engagement Awards </a></li>
+                <li><a class="dropdown-item" href="#">Corporate & Financial Awards </a></li>
+                <li><a class="dropdown-item" href="#">Datacomms Awards </a></li>
+                <li><a class="dropdown-item" href="#">Digital Impact Awards </a></li>
+                <li><a class="dropdown-item" href="#">Employer Brand Management Awards </a></li>
+                <li><a class="dropdown-item" href="#">Internal Communications & Engagement Awards </a></li>
+                <li><a class="dropdown-item" href="#">Lens Awards </a></li>
+                <li><a class="dropdown-item" href="#">Transform Awards </a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Conferences</a>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav2">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">News sign-up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <form class="search" role="search">
+      <div class="mobile-search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-link" type="submit">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="5.61364" cy="5.81871" r="5.02273" stroke="#241B1B" stroke-width="1.18182" />
+            <line x1="9.28502" y1="9.24232" x2="13.4214" y2="13.3787" stroke="#241B1B" stroke-width="1.18182" />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </header>
+
+  <main class="">
+    <div class="container bg-light" style="height: 500px;">
+      <h1 class="text-center mb-4">Welcome to Communicate</h1>
+      <p class="lead text-center">A modern communication solution</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="top-navigation">
+      <div class="d-flex justify-content-between gap-3xl">
+        <!-- Left Navigation -->
+
+        <div class="footer-contacts">
+          <div class="footer-contact">
+            <h5 class="footer-title">Editorial</h5>
+            <div class="footer-nav-body">
+              <p class="footer-text contact-name">Rebecca Pardon</p>
+              <p class="footer-text contact-phone">+44 (0)20 3950 5356</p>
+            </div>
+          </div>
+
+          <div class="footer-contact">
+            <h5 class="footer-title">Sponsorship</h5>
+            <div class="footer-nav-body">
+              <p class="footer-text contact-name">Andrew Thomas</p>
+              <p class="footer-text contact-phone">+44 (0)20 3950 5356</p>
+            </div>
+          </div>
+
+          <div class="footer-contact">
+            <h5 class="footer-title">Partnerships</h5>
+            <div class="footer-nav-body">
+              <p class="footer-text contact-name">Finley Chesson</p>
+              <p class="footer-text contact-phone">+44 (0)20 3950 5356</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Right Navigation -->
+        <div class="footer-links-wrap">
+
+          <div class="footer-nav social-section">
+            <h6 class="footer-links-title">Social</h6>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Instagram</a></li>
+              <li><a href="#" class="footer-link">LinkedIn</a></li>
+              <li><a href="#" class="footer-link">Facebook</a></li>
+              <li><a href="#" class="footer-link">Youtube</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav utility-section">
+            <h6 class="footer-links-title">Pages</h6>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">About us</a></li>
+              <li><a href="#" class="footer-link">Contact us</a></li>
+              <li><a href="#" class="footer-link">Privacy</a></li>
+              <li><a href="#" class="footer-link">Cookies</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <a href="/" class="footer-brand">
+      <img class="footer-logo" src="./images/footer-logo.svg" alt="Footer Logo">
+    </a>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script  src="./js/main.js"></script>
+
+  <script>
+    const mobileSearchBtn = document.querySelector('.mobile-search-btn');
+    const mobileSearch = document.querySelector('.mobile-search');
+
+    mobileSearchBtn.addEventListener('click', () => {
+      mobileSearch.classList.toggle('active');
+    });
+  </script>
+
+</body>
+
+</html>
