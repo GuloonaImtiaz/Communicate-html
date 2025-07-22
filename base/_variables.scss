@@ -1,0 +1,154 @@
+// Colors
+$primary: #241B1B;
+$secondary: #410016;
+$accent: #E4107E;
+$accent-light: #FBD9EA;
+$gray: #C2C2C2;
+$background: #F6F5F0;
+$success: #00C07D;
+$white: #FFFFFF;
+$light-blue: #EBF1FF;
+
+// Typography
+$font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-family-heading: 'Libre Caslon Condensed', serif;
+$line-height-base: 1.6;
+
+// -----------------------------------
+// Font Sizes (SCSS Variables)
+// -----------------------------------
+$font-size-xs: 14px;
+$font-size-base: 1rem;
+
+$font-size-h1-xl: 96px;
+$font-size-h1-md: 72px;
+$font-size-h1-sm: 56px;
+
+$font-size-h2-xl: 80px;
+$font-size-h2-md: 64px;
+$font-size-h2-sm: 48px;
+
+$font-size-h3-xl: 64px;
+$font-size-h3-md: 48px;
+$font-size-h3-sm: 36px;
+
+$font-size-h4: 40px;
+$font-size-h5: 36px;
+$font-size-h6: 24px;
+$font-size-h7: 20px;
+$font-size-h8: 16px;
+
+$font-size-paragraph-large: 24px;
+$font-size-paragraph-small: 16px;
+
+$font-size-cta-large: 20px;
+$font-size-cta-small: 14px;
+
+$font-size-quote-large: 28px;
+
+$font-size-detail-medium: 14px;
+$font-size-detail-regular: 14px;
+
+$font-size-tag-large: 24px;
+$font-size-tag-medium: 16px;
+$font-size-tag-small: 14px;
+
+$font-size-caption: 16px;
+
+
+// Spacing
+$space-3xs: 0.25rem; // 4px
+$space-2xs: 0.5rem; // 8px
+$space-xs: 0.875rem; // 14px
+$space-s: 1rem; // 16px
+$space-m: 1.5rem; // 24px
+$space-l: 2rem; // 32px
+$space-xl: 2.5rem; // 40px
+$space-2xl: 3.5rem; // 56px
+$space-3xl: 4rem; // 64px
+$space-4xl: 4.5rem; // 72px
+$space-5xl: 5rem; // 80px
+$space-6xl: 7.5rem; // 120px
+$space-7xl: 10rem; // 160px
+$space-8xl: 12.5rem; // 200px
+
+// Media Queries
+$media-xs: 0;
+$media-sm: 576px;
+$media-md: 768px;
+$media-lg: 1024px;
+$media-xl: 1200px;
+$media-xxl: 1440px;
+
+// CSS Custom Properties for colors
+:root {
+  // Colors
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+  --color-accent: #{$accent};
+  --color-accent-light: #{$accent-light};
+  --color-gray: #{$gray};
+  --color-background: #{$background};
+  --color-success: #{$success};
+  --color-white: #{$white};
+  --color-light-blue: #{$light-blue};
+
+  // Typography
+  --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-heading: 'Libre Caslon Condensed', serif;
+  --line-height-base: #{$line-height-base};
+  
+  // Font Sizes
+  --font-size-xs: #{$font-size-xs};
+  --font-size-base: #{$font-size-base};
+  --font-size-h1-xl: #{$font-size-h1-xl};
+  --font-size-h1-md: #{$font-size-h1-md};
+  --font-size-h1-sm: #{$font-size-h1-sm};
+  
+  --font-size-h2-xl: #{$font-size-h2-xl};
+  --font-size-h2-md: #{$font-size-h2-md};
+  --font-size-h2-sm: #{$font-size-h2-sm};
+  
+  --font-size-h3-xl: #{$font-size-h3-xl};
+  --font-size-h3-md: #{$font-size-h3-md};
+  --font-size-h3-sm: #{$font-size-h3-sm};
+  
+  --font-size-h4: #{$font-size-h4};
+  --font-size-h5: #{$font-size-h5};
+  --font-size-h6: #{$font-size-h6};
+  --font-size-h7: #{$font-size-h7};
+  --font-size-h8: #{$font-size-h8};
+  
+  --font-size-paragraph-large: #{$font-size-paragraph-large};
+  --font-size-paragraph-small: #{$font-size-paragraph-small};
+  
+  --font-size-cta-large: #{$font-size-cta-large};
+  --font-size-cta-small: #{$font-size-cta-small};
+  
+  --font-size-quote-large: #{$font-size-quote-large};
+  
+  --font-size-detail-medium: #{$font-size-detail-medium};
+  --font-size-detail-regular: #{$font-size-detail-regular};
+  
+  --font-size-tag-large: #{$font-size-tag-large};
+  --font-size-tag-medium: #{$font-size-tag-medium};
+  --font-size-tag-small: #{$font-size-tag-small};
+  
+  --font-size-caption: #{$font-size-caption};
+
+  // Spacing
+  --space-3xs: #{$space-3xs}; // 4px
+  --space-2xs: #{$space-2xs}; // 8px
+  --space-xs: #{$space-xs}; // 14px
+  --space-s: #{$space-s}; // 16px
+  --space-m: #{$space-m}; // 24px
+  --space-l: #{$space-l}; // 32px
+  --space-xl: #{$space-xl}; // 40px
+  --space-2xl: #{$space-2xl}; // 56px
+  --space-3xl: #{$space-3xl}; // 64px
+  --space-4xl: #{$space-4xl}; // 72px
+  --space-5xl: #{$space-5xl}; // 80px
+  --space-6xl: #{$space-6xl}; // 120px
+  --space-7xl: #{$space-7xl}; // 160px
+  --space-8xl: #{$space-8xl}; // 200px
+}

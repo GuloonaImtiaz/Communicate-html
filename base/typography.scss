@@ -1,0 +1,198 @@
+// -----------------------------------
+// Headings
+// -----------------------------------
+
+h1,
+.heading-1 {
+    font-size: 96px;
+    line-height: 100%;
+    font-weight: 500;
+
+    @media (min-width: $media-xs) {
+        font-size: 56px;
+    }
+
+    @media (min-width: $media-sm) {
+        font-size: 72px;
+    }
+
+    @media (min-width: $media-md) {
+        font-size: 96px;
+    }
+}
+
+h2,
+.heading-2 {
+    font-size: 80px;
+    line-height: 100%;
+    font-weight: 500;
+
+    @media (min-width: $media-xs) {
+        font-size: 48px;
+    }
+
+    @media (min-width: $media-sm) {
+        font-size: 64px;
+    }
+
+    @media (min-width: $media-md) {
+        font-size: 80px;
+    }
+}
+
+h3,
+.heading-3 {
+    font-size: 64px;
+    line-height: 120%;
+    font-weight: 500;
+
+    @media (min-width: $media-xs) {
+        font-size: 36px;
+    }
+
+    @media (min-width: $media-sm) {
+        font-size: 48px;
+    }
+}
+
+h4,
+.heading-4 {
+    font-size: 40px;
+    line-height: 120%;
+    font-weight: 500;
+}
+
+h5,
+.heading-5 {
+    font-size: 36px;
+    line-height: 140%;
+    font-weight: 500;
+}
+
+h6,
+.heading-6 {
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: 500;
+}
+
+.heading-7 {
+    font-size: 20px;
+    line-height: 140%;
+    font-weight: 500;
+}
+
+.heading-8 {
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 500;
+}
+
+// -----------------------------------
+// Paragraphs
+// -----------------------------------
+
+.paragraph-large {
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 400;
+}
+
+.paragraph-small {
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+
+    &.bold {
+        font-weight: bold;
+    }
+
+    &.medium {
+        font-weight: 500;
+    }
+
+    &.underline {
+        text-decoration: underline;
+    }
+}
+
+// -----------------------------------
+// CTAs
+// -----------------------------------
+
+.cta-large {
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 400;
+
+    &.underline {
+        text-decoration: underline;
+    }
+}
+
+.cta-small {
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 400;
+}
+
+// -----------------------------------
+// Quotes
+// -----------------------------------
+
+.quote-large {
+    font-size: 28px;
+    line-height: 120%;
+    font-weight: 500;
+}
+
+// -----------------------------------
+// Detail Text
+// -----------------------------------
+
+.detail-medium {
+    font-size: 14px;
+    line-height: 120%;
+    font-weight: 500;
+}
+
+.detail-regular {
+    font-size: 14px;
+    line-height: 120%;
+    font-weight: 400;
+}
+
+// -----------------------------------
+// Tags
+// -----------------------------------
+
+.tag-large {
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+.tag-medium {
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.tag-small {
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+// -----------------------------------
+// Caption
+// -----------------------------------
+
+.caption {
+    font-size: 16px;
+    line-height: 110%;
+    font-weight: 400;
+}
