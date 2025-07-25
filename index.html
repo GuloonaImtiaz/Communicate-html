@@ -276,67 +276,84 @@
     const subForm = document.querySelectorAll('.subscribe-form');
     const bottomNavWrap = document.querySelector('.bottom-nav-wrap');
     const topNav = document.querySelector('.top-nav');
-    const scrollRange = 300;
-    const originalOpacities = [...paths].map(path => path.style.opacity || "1");
-    let initialPadding = parseFloat(getComputedStyle(topNav).paddingTop);
-    let initialHeight = bottomNavWrap.offsetHeight;
-
-    function updateOnScroll(scrollY) {
-      const p = Math.min(scrollY / scrollRange, 1);
-      const ease = gsap.parseEase("sine.inOut")(p);
-      const fade = 1 - Math.min(scrollY / (scrollRange * 0.5), 1);
-
-      gsap.to(logoCircle, { scale: 1 + (2.5 * ease), x: -5 * ease, y: 8 * ease, duration: 0.1, overwrite: true, ease: "none" });
-      gsap.to(paths, { opacity: fade, duration: 0.1, overwrite: true, ease: "none" });
-      gsap.to(subForm, { opacity: fade, duration: 0.1, overwrite: true, ease: "none" });
-
-      const isScrollingDown = scrollY > 100;
-
-      if (isScrollingDown) {
-        const newPadding = 27 * (1 - p * 0.7);
-        gsap.to(bottomNavWrap, {
-          opacity: fade,
-          maxHeight: `${initialHeight * fade}px`,
-          duration: 0.3,
-          ease: 'sine.inOut',
-          onStart: () => {
-            bottomNavWrap.style.overflow = 'hidden';
-            bottomNavWrap.style.willChange = 'max-height, opacity';
-          },
-          onUpdate: () => gsap.set(topNav, { paddingTop: `${newPadding}px`, paddingBottom: `${newPadding}px` }),
-          onComplete: () => {
-            if (fade < 0.05) {
-              bottomNavWrap.style.maxHeight = '0';
-              gsap.set(topNav, { paddingTop: '8px', paddingBottom: '8px' });
-            }
+    
+    // Initial setup
+    const initialPadding = parseFloat(getComputedStyle(topNav).paddingTop);
+    const initialHeight = bottomNavWrap.offsetHeight;
+    
+    // Store original styles
+    paths.forEach(path => {
+      path.dataset.originalOpacity = path.style.opacity || '1';
+    });
+    
+    // Set initial state
+    gsap.set(bottomNavWrap, { overflow: 'hidden' });
+    
+    // Create ScrollTrigger for scroll-based animations
+    const scrollTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: 'body',
+        start: 'top top',
+        end: '+=1000',
+        scrub: 0.1,
+        onUpdate: (self) => {
+          const scrollY = self.scroll();
+          const progress = Math.min(scrollY / 300, 1);
+          const fade = 1 - Math.min(scrollY / 150, 1);
+          const isScrolledDown = scrollY > 100;
+          
+          // Logo animation
+          gsap.to(logoCircle, {
+            scale: 1 + (2.5 * progress),
+            x: -5 * progress,
+            y: 8 * progress,
+            duration: 0.1,
+            overwrite: true
+          });
+          
+          // Fade elements
+          gsap.to([...paths, ...subForm], {
+            opacity: fade,
+            duration: 0.1,
+            overwrite: true
+          });
+          
+          // Navbar collapse/expand
+          if (isScrolledDown) {
+            const newPadding = 27 * (1 - progress * 0.7);
+            gsap.set(topNav, {
+              paddingTop: `${Math.max(8, newPadding)}px`,
+              paddingBottom: `${Math.max(8, newPadding)}px`
+            });
+            gsap.set(bottomNavWrap, {
+              maxHeight: `${Math.max(0, initialHeight * fade)}px`,
+              opacity: fade,
+              onComplete: () => {
+                if (fade < 0.05) {
+                  bottomNavWrap.style.maxHeight = '0';
+                }
+              }
+            });
+          } else {
+            gsap.set(topNav, {
+              paddingTop: `${8 + (initialPadding - 8) * fade}px`,
+              paddingBottom: `${8 + (initialPadding - 8) * fade}px`
+            });
+            gsap.set(bottomNavWrap, {
+              maxHeight: `${initialHeight}px`,
+              opacity: 1,
+              display: 'block'
+            });
           }
-        });
-      } else {
-        gsap.to(bottomNavWrap, {
-          opacity: 1,
-          maxHeight: `${initialHeight}px`,
-          duration: 0.4,
-          ease: 'sine.out',
-          onStart: () => (bottomNavWrap.style.display = 'block'),
-          onUpdate: () => {
-            const newPad = 8 + (initialPadding - 8) * fade;
-            gsap.set(topNav, { paddingTop: `${newPad}px`, paddingBottom: `${newPad}px` });
-          },
-          onComplete: () => {
-            Object.assign(bottomNavWrap.style, { maxHeight: '', overflow: '', willChange: '', display: '' });
-            gsap.set(topNav, { paddingTop: `${initialPadding}px`, paddingBottom: `${initialPadding}px` });
-          }
-        });
+        },
+        onLeaveBack: () => {
+          // Reset styles when scrolling back to top
+          gsap.set([...paths, ...subForm], { opacity: 1 });
+          gsap.set(logoCircle, { scale: 1, x: 0, y: 0 });
+          gsap.set(topNav, { paddingTop: initialPadding, paddingBottom: initialPadding });
+          gsap.set(bottomNavWrap, { maxHeight: 'none', opacity: 1, display: 'block' });
+        }
       }
-    }
-
-    gsap.ticker.add(() => updateOnScroll(window.scrollY));
-    gsap.ticker.fps(60);
-
-    window.addEventListener('load', () => {
-      initialHeight = bottomNavWrap.offsetHeight;
-      initialPadding = parseFloat(getComputedStyle(topNav).paddingTop);
-      updateOnScroll(window.scrollY);
     });
   </script>
 
