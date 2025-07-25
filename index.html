@@ -21,7 +21,7 @@
 
 <body>
 
-  <header class="site-header">
+  <header class="site-header position-fixed">
     <nav class="navbar navbar-expand-lg top-nav d-none d-lg-block bg-white">
       <div class="navbar-container">
         <span></span>
@@ -71,14 +71,8 @@
               d="M107.744 6.71819C109.509 6.71819 110.94 5.29604 110.94 3.54171C110.94 1.78739 109.509 0.365234 107.744 0.365234C105.978 0.365234 104.547 1.78739 104.547 3.54171C104.547 5.29604 105.978 6.71819 107.744 6.71819Z"
               fill="#E4107E" />
           </svg>
-          <!-- Logo Circle - This will be shown when scrolled -->
-          <div class="logo-circle">
-            <path class="logo-circle"
-              d="M107.744 6.71819C109.509 6.71819 110.94 5.29604 110.94 3.54171C110.94 1.78739 109.509 0.365234 107.744 0.365234C105.978 0.365234 104.547 1.78739 104.547 3.54171C104.547 5.29604 105.978 6.71819 107.744 6.71819Z"
-              fill="#E4107E" />
-          </div>
         </a>
-        <form class="d-flex" role="">
+        <form class="subscribe-form d-flex" role="">
           <input class="form-control" type="email" placeholder="Subscribe to Magazine" aria-label="" />
           <button class="btn btn-link" type="submit">
             <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,14 +84,89 @@
         </form>
       </div>
     </nav>
-    <div class="menu-divider"></div>
-    <nav class="navbar navbar-expand-lg navbar-light bottom-nav bg-white">
-      <div class="navbar-container">
-        <a class="navbar-brand d-block d-lg-none me-auto" href="/">
-          <img class="navbar-logo" src="./images/logo.svg" alt="Communicate Logo">
-        </a>
+    <div class="bottom-nav-wrap">
+      <div class="menu-divider"></div>
+      <nav class="navbar navbar-expand-lg navbar-light bottom-nav bg-white">
+        <div class="navbar-container">
+          <a class="navbar-brand d-block d-lg-none me-auto" href="/">
+            <img class="navbar-logo" src="./images/logo.svg" alt="Communicate Logo">
+          </a>
 
-        <form class="d-none d-lg-flex search" role="search">
+          <form class="d-none d-lg-flex search" role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-link" type="submit">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5.61364" cy="5.81871" r="5.02273" stroke="#241B1B" stroke-width="1.18182" />
+                <line x1="9.28502" y1="9.24232" x2="13.4214" y2="13.3787" stroke="#241B1B" stroke-width="1.18182" />
+              </svg>
+            </button>
+          </form>
+          <div class=" d-flex d-lg-none ms-auto align-items-center gap-2">
+            <button class="btn-link mobile-search-btn" type="button">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="5.61364" cy="5.81871" r="5.02273" stroke="#241B1B" stroke-width="1.18182" />
+                <line x1="9.28502" y1="9.24232" x2="13.4214" y2="13.3787" stroke="#241B1B" stroke-width="1.18182" />
+              </svg>
+            </button>
+            <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Latest</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Stories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Showcase</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Media hub</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Awards
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M13.3438 6.34375C13.6992 6.34375 14 6.64453 14 7C14 7.38281 13.6992 7.65625 13.3438 7.65625H7.65625V13.3438C7.65625 13.7266 7.35547 14 7 14C6.61719 14 6.34375 13.7266 6.34375 13.3438V7.65625H0.65625C0.273438 7.65625 0 7.38281 0 7C0 6.64453 0.273438 6.34375 0.65625 6.34375H6.34375V0.65625C6.34375 0.300781 6.61719 0 7 0C7.35547 0 7.65625 0.300781 7.65625 0.65625V6.34375H13.3438Z"
+                      fill="#241B1B" />
+                  </svg>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">All Awards</a></li>
+                  <li><a class="dropdown-item" href="#">Corporate Content Awards</a></li>
+                  <li><a class="dropdown-item" href="#">Corporate Engagement Awards </a></li>
+                  <li><a class="dropdown-item" href="#">Corporate & Financial Awards </a></li>
+                  <li><a class="dropdown-item" href="#">Datacomms Awards </a></li>
+                  <li><a class="dropdown-item" href="#">Digital Impact Awards </a></li>
+                  <li><a class="dropdown-item" href="#">Employer Brand Management Awards </a></li>
+                  <li><a class="dropdown-item" href="#">Internal Communications & Engagement Awards </a></li>
+                  <li><a class="dropdown-item" href="#">Lens Awards </a></li>
+                  <li><a class="dropdown-item" href="#">Transform Awards </a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Conferences</a>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNav2">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">News sign-up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <form class="mobile-search-wrap" role="search">
+        <div class="mobile-search">
           <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
           <button class="btn btn-link" type="submit">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,86 +174,13 @@
               <line x1="9.28502" y1="9.24232" x2="13.4214" y2="13.3787" stroke="#241B1B" stroke-width="1.18182" />
             </svg>
           </button>
-        </form>
-        <div class=" d-flex d-lg-none ms-auto align-items-center gap-2">
-          <button class="btn-link mobile-search-btn" type="button">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="5.61364" cy="5.81871" r="5.02273" stroke="#241B1B" stroke-width="1.18182" />
-              <line x1="9.28502" y1="9.24232" x2="13.4214" y2="13.3787" stroke="#241B1B" stroke-width="1.18182" />
-            </svg>
-          </button>
-          <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
         </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Latest</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Stories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Showcase</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Media hub</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Awards
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M13.3438 6.34375C13.6992 6.34375 14 6.64453 14 7C14 7.38281 13.6992 7.65625 13.3438 7.65625H7.65625V13.3438C7.65625 13.7266 7.35547 14 7 14C6.61719 14 6.34375 13.7266 6.34375 13.3438V7.65625H0.65625C0.273438 7.65625 0 7.38281 0 7C0 6.64453 0.273438 6.34375 0.65625 6.34375H6.34375V0.65625C6.34375 0.300781 6.61719 0 7 0C7.35547 0 7.65625 0.300781 7.65625 0.65625V6.34375H13.3438Z"
-                    fill="#241B1B" />
-                </svg>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">All Awards</a></li>
-                <li><a class="dropdown-item" href="#">Corporate Content Awards</a></li>
-                <li><a class="dropdown-item" href="#">Corporate Engagement Awards </a></li>
-                <li><a class="dropdown-item" href="#">Corporate & Financial Awards </a></li>
-                <li><a class="dropdown-item" href="#">Datacomms Awards </a></li>
-                <li><a class="dropdown-item" href="#">Digital Impact Awards </a></li>
-                <li><a class="dropdown-item" href="#">Employer Brand Management Awards </a></li>
-                <li><a class="dropdown-item" href="#">Internal Communications & Engagement Awards </a></li>
-                <li><a class="dropdown-item" href="#">Lens Awards </a></li>
-                <li><a class="dropdown-item" href="#">Transform Awards </a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Conferences</a>
-            </li>
-          </ul>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav2">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">News sign-up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <form class="search" role="search">
-      <div class="mobile-search">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-link" type="submit">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="5.61364" cy="5.81871" r="5.02273" stroke="#241B1B" stroke-width="1.18182" />
-            <line x1="9.28502" y1="9.24232" x2="13.4214" y2="13.3787" stroke="#241B1B" stroke-width="1.18182" />
-          </svg>
-        </button>
-      </div>
-    </form>
+      </form>
+    </div>
   </header>
 
   <main class="">
-    <div class="container bg-light" style="height: 500px;">
+    <div class="container bg-light" style="height: 1500px;">
       <h1 class="text-center mb-4">Welcome to Communicate</h1>
       <p class="lead text-center">A modern communication solution</p>
     </div>
@@ -254,24 +250,97 @@
     </a>
   </footer>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 
-  <!-- Header Script -->
-  <script src="./js/header.js"></script>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/main.js"></script>
 
   <script>
     const mobileSearchBtn = document.querySelector('.mobile-search-btn');
-    const mobileSearch = document.querySelector('.mobile-search');
+    const mobileSearch = document.querySelector('.mobile-search-wrap');
 
     mobileSearchBtn.addEventListener('click', () => {
       mobileSearch.classList.toggle('active');
     });
   </script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const logo = document.querySelector('.navbar-logo');
+    const logoCircle = logo?.querySelector('.logo-circle');
+    const paths = logo?.querySelectorAll('path:not(.logo-circle)');
+    const subForm = document.querySelectorAll('.subscribe-form');
+    const bottomNavWrap = document.querySelector('.bottom-nav-wrap');
+    const topNav = document.querySelector('.top-nav');
+    const scrollRange = 300;
+    const originalOpacities = [...paths].map(path => path.style.opacity || "1");
+    let initialPadding = parseFloat(getComputedStyle(topNav).paddingTop);
+    let initialHeight = bottomNavWrap.offsetHeight;
+
+    function updateOnScroll(scrollY) {
+      const p = Math.min(scrollY / scrollRange, 1);
+      const ease = gsap.parseEase("sine.inOut")(p);
+      const fade = 1 - Math.min(scrollY / (scrollRange * 0.5), 1);
+
+      gsap.to(logoCircle, { scale: 1 + (2.5 * ease), x: -5 * ease, y: 8 * ease, duration: 0.1, overwrite: true, ease: "none" });
+      gsap.to(paths, { opacity: fade, duration: 0.1, overwrite: true, ease: "none" });
+      gsap.to(subForm, { opacity: fade, duration: 0.1, overwrite: true, ease: "none" });
+
+      const isScrollingDown = scrollY > 100;
+
+      if (isScrollingDown) {
+        const newPadding = 27 * (1 - p * 0.7);
+        gsap.to(bottomNavWrap, {
+          opacity: fade,
+          maxHeight: `${initialHeight * fade}px`,
+          duration: 0.3,
+          ease: 'sine.inOut',
+          onStart: () => {
+            bottomNavWrap.style.overflow = 'hidden';
+            bottomNavWrap.style.willChange = 'max-height, opacity';
+          },
+          onUpdate: () => gsap.set(topNav, { paddingTop: `${newPadding}px`, paddingBottom: `${newPadding}px` }),
+          onComplete: () => {
+            if (fade < 0.05) {
+              bottomNavWrap.style.maxHeight = '0';
+              gsap.set(topNav, { paddingTop: '8px', paddingBottom: '8px' });
+            }
+          }
+        });
+      } else {
+        gsap.to(bottomNavWrap, {
+          opacity: 1,
+          maxHeight: `${initialHeight}px`,
+          duration: 0.4,
+          ease: 'sine.out',
+          onStart: () => (bottomNavWrap.style.display = 'block'),
+          onUpdate: () => {
+            const newPad = 8 + (initialPadding - 8) * fade;
+            gsap.set(topNav, { paddingTop: `${newPad}px`, paddingBottom: `${newPad}px` });
+          },
+          onComplete: () => {
+            Object.assign(bottomNavWrap.style, { maxHeight: '', overflow: '', willChange: '', display: '' });
+            gsap.set(topNav, { paddingTop: `${initialPadding}px`, paddingBottom: `${initialPadding}px` });
+          }
+        });
+      }
+    }
+
+    gsap.ticker.add(() => updateOnScroll(window.scrollY));
+    gsap.ticker.fps(60);
+
+    window.addEventListener('load', () => {
+      initialHeight = bottomNavWrap.offsetHeight;
+      initialPadding = parseFloat(getComputedStyle(topNav).paddingTop);
+      updateOnScroll(window.scrollY);
+    });
+  </script>
+
+
 
 </body>
 

@@ -279,10 +279,52 @@ ol {
 }
 
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   padding: 0 var(--space-m);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.site-header.scrolled {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.site-header.scrolled .top-nav {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+.site-header.scrolled .top-nav .logo-path {
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+.site-header.scrolled .top-nav .logo-circle {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+.site-header.scrolled .menu-divider {
+  opacity: 0;
+  height: 0;
+}
+.site-header.scrolled .bottom-nav {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 .site-header .top-nav {
   padding: 27px 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
+  background: white;
 }
 .site-header .top-nav .navbar-container {
   display: -ms-grid;
@@ -328,6 +370,15 @@ ol {
 .site-header .menu-divider {
   height: 1px;
   background-color: var(--color-gray);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.site-header .bottom-nav {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+  background: white;
 }
 .site-header .bottom-nav .navbar-container {
   width: 100%;
@@ -421,20 +472,21 @@ ol {
   color: var(--color-white);
   background-color: var(--color-accent);
 }
-.site-header form.search {
+.site-header form.mobile-search-wrap {
   position: relative;
-}
-.site-header form.search .mobile-search {
-  scale: 0;
   -webkit-transform-origin: center;
           transform-origin: center;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  scale: 0;
+  height: 0;
+  overflow: hidden;
 }
-.site-header form.search .mobile-search.active {
+.site-header form.mobile-search-wrap.active {
   scale: 1;
+  height: auto;
 }
-.site-header form.search .mobile-search .form-control {
+.site-header form.mobile-search-wrap .mobile-search .form-control {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -452,7 +504,7 @@ ol {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.site-header form.search .mobile-search .btn {
+.site-header form.mobile-search-wrap .mobile-search .btn {
   background: none;
   border: 0;
   padding: 0;
