@@ -289,70 +289,61 @@
     // Set initial state
     gsap.set(bottomNavWrap, { overflow: 'hidden' });
     
-    // Create ScrollTrigger for scroll-based animations
-    const scrollTl = gsap.timeline({
+    // Logo animation with ScrollTrigger
+    gsap.to(logoCircle, {
+      scale: 3.5,
+      x: -5,
+      y: 8,
       scrollTrigger: {
         trigger: 'body',
         start: 'top top',
-        end: '+=1000',
+        end: '+=300',
         scrub: 0.1,
-        onUpdate: (self) => {
-          const scrollY = self.scroll();
-          const progress = Math.min(scrollY / 300, 1);
-          const fade = 1 - Math.min(scrollY / 150, 1);
-          const isScrolledDown = scrollY > 100;
-          
-          // Logo animation
-          gsap.to(logoCircle, {
-            scale: 1 + (2.5 * progress),
-            x: -5 * progress,
-            y: 8 * progress,
-            duration: 0.1,
-            overwrite: true
-          });
-          
-          // Fade elements
-          gsap.to([...paths, ...subForm], {
-            opacity: fade,
-            duration: 0.1,
-            overwrite: true
-          });
-          
-          // Navbar collapse/expand
-          if (isScrolledDown) {
-            const newPadding = 27 * (1 - progress * 0.7);
-            gsap.set(topNav, {
-              paddingTop: `${Math.max(8, newPadding)}px`,
-              paddingBottom: `${Math.max(8, newPadding)}px`
-            });
-            gsap.set(bottomNavWrap, {
-              maxHeight: `${Math.max(0, initialHeight * fade)}px`,
-              opacity: fade,
-              onComplete: () => {
-                if (fade < 0.05) {
-                  bottomNavWrap.style.maxHeight = '0';
-                }
-              }
-            });
-          } else {
-            gsap.set(topNav, {
-              paddingTop: `${8 + (initialPadding - 8) * fade}px`,
-              paddingBottom: `${8 + (initialPadding - 8) * fade}px`
-            });
-            gsap.set(bottomNavWrap, {
-              maxHeight: `${initialHeight}px`,
-              opacity: 1,
-              display: 'block'
-            });
-          }
+        toggleActions: 'play none none reverse'
+      }
+    });
+    
+    // Fade elements with ScrollTrigger
+    gsap.to([...paths, ...subForm], {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: 'body',
+        start: 'top top',
+        end: '+=150',
+        scrub: 0.1,
+        toggleActions: 'play none none reverse'
+      }
+    });
+    
+    // Navbar collapse with ScrollTrigger
+    gsap.to(bottomNavWrap, {
+      maxHeight: 0,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: 'body',
+        start: 'top top',
+        end: '+=300',
+        scrub: 0.1,
+        toggleActions: 'play none none reverse',
+        onLeave: () => {
+          bottomNavWrap.style.maxHeight = '0';
         },
-        onLeaveBack: () => {
-          // Reset styles when scrolling back to top
-          gsap.set([...paths, ...subForm], { opacity: 1 });
-          gsap.set(logoCircle, { scale: 1, x: 0, y: 0 });
-          gsap.set(topNav, { paddingTop: initialPadding, paddingBottom: initialPadding });
-          gsap.set(bottomNavWrap, { maxHeight: 'none', opacity: 1, display: 'block' });
+        onEnterBack: () => {
+          bottomNavWrap.style.maxHeight = '';
         }
+      }
+    });
+    
+    // Top nav padding animation
+    gsap.to(topNav, {
+      paddingTop: '8px',
+      paddingBottom: '8px',
+      scrollTrigger: {
+        trigger: 'body',
+        start: 'top top',
+        end: '+=300',
+        scrub: 0.1,
+        toggleActions: 'play none none reverse'
       }
     });
   </script>
