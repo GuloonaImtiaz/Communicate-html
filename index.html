@@ -276,19 +276,19 @@
     const subForm = document.querySelectorAll('.subscribe-form');
     const bottomNavWrap = document.querySelector('.bottom-nav-wrap');
     const topNav = document.querySelector('.top-nav');
-    
+
     // Initial setup
     const initialPadding = parseFloat(getComputedStyle(topNav).paddingTop);
     const initialHeight = bottomNavWrap.offsetHeight;
-    
+
     // Store original styles
     paths.forEach(path => {
       path.dataset.originalOpacity = path.style.opacity || '1';
     });
-    
+
     // Set initial state
-    gsap.set(bottomNavWrap, { overflow: 'hidden' });
-    
+    gsap.set(bottomNavWrap, {});
+
     // Logo animation with ScrollTrigger
     gsap.to(logoCircle, {
       scale: 3.5,
@@ -297,12 +297,17 @@
       scrollTrigger: {
         trigger: 'body',
         start: 'top top',
-        end: '+=300',
+        end: '+=200',
         scrub: 0.1,
+        markers: {
+          // indent: 150 * i,
+          startColor: "white",
+          endColor: "white"
+        },
         toggleActions: 'play none none reverse'
       }
     });
-    
+
     // Fade elements with ScrollTrigger
     gsap.to([...paths, ...subForm], {
       opacity: 0,
@@ -314,16 +319,19 @@
         toggleActions: 'play none none reverse'
       }
     });
-    
+
     // Navbar collapse with ScrollTrigger
     gsap.to(bottomNavWrap, {
-      maxHeight: 0,
+      // maxHeight: 0,
+      height: 0,
       opacity: 0,
       scrollTrigger: {
         trigger: 'body',
         start: 'top top',
-        end: '+=300',
+        end: '+=200',
+        markers: true,
         scrub: 0.1,
+        // scrub: true,
         toggleActions: 'play none none reverse',
         onLeave: () => {
           bottomNavWrap.style.maxHeight = '0';
@@ -333,7 +341,7 @@
         }
       }
     });
-    
+
     // Top nav padding animation
     gsap.to(topNav, {
       paddingTop: '8px',
@@ -341,7 +349,7 @@
       scrollTrigger: {
         trigger: 'body',
         start: 'top top',
-        end: '+=300',
+        end: '+=200',
         scrub: 0.1,
         toggleActions: 'play none none reverse'
       }
